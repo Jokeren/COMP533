@@ -53,7 +53,7 @@ create materialized view jaccard_genres as
 select movieid, type
 from all_information 
 group by movieid, type
-order by movieid 
+order by movieid; 
 
 create index movieindex on jaccard_genres(movieid);
 create index typeindex on jaccard_genres(type);
@@ -275,7 +275,7 @@ create materialized view recommend_movie_previous as
 select s.id_1 as movie_id, s.id_2 as recommend_movie_id, m.title as recommend_movie, (s.similarity * 10 * 0.4 + m.rating*0.6) as recommendation_value
 from similarity s, movie m
 where s.id_2=m.movieid
-order by s.id_1, recommendation_value desc
+order by s.id_1, recommendation_value desc;
 																						
 create table recommend_movie as																						
 select movie_id, m.title, rm.recommend_movie_id, rm.recommend_movie, rm.recommendation_value
@@ -283,6 +283,6 @@ from recommend_movie_previous rm, movie m
 where rm.movie_id = m.movieid and rm.recommendation_value >	5.5																					
 order by rm.movie_id, recommendation_value desc	
 																						
-																					
+-- select 	count(*) from recommend_movie;																				
 																						
 																						
