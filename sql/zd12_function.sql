@@ -36,11 +36,11 @@ $$
 language plpgsql;
 
 -- test case										
-select * from movieRecommendation_1('Don''t', '');
-select * from movieRecommendation_1('', 'tt0071430');	
-select * from movieRecommendation_1('', 'tt0086353');
+select * from movieRecommendation_1('Bromine', '');
+select * from movieRecommendation_1('', 'tt0000223 ');	
+select * from movieRecommendation_1('', 'tt1136956 ');
 select * from movieRecommendation_1('Mysteries of the Deep', '');
-select * from movieRecommendation_1('Don''t', 'tt0086353');
+select * from movieRecommendation_1('Bromine', 'tt0000223');
 																	 
 																					 
 															
